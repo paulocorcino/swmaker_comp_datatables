@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<component category="Adicionais" class="DataTables" image="Resources\PT\Components\DataTables\Images\Datatablesex.bmp" icon="Resources\PT\Components\DataTables\Images\Datatables.bmp" docurl="https://github.com/paulocorcino/doc/wiki/WebrunDataTable">
+  
+  <property description="Origem Dataset" realname="datasetSource"  dialogtype="btDropDown" type="list" default="server">
+   <list>
+    <item name="Servidor" value="server"/>
+    <item name="Cliente" value="client"/>
+   </list>
+  </property>
+  
+  <property description="Fonte de Dados" realname="FonteDeDados" dialogtype="btDropDown" type="text"/>
+  <property description="SQL" realname="consultaSQL" dialogtype="btDialog" type="sql" source="FonteDeDados"/>
+  <property description="Colunas" realname="columnDT" dialogtype="btDialog" type="url" default="W10=" formguid="{BE0134CF-31FE-488D-9F53-993D7297CA5F}" width="956" height="686"/>
+  <property description="Dados JSON" realname="dataJSON" dialogtype="btDialog" type="url" formguid="{BE0134CF-31FE-488D-9F53-993D7297CA5F}" width="956" height="686"/>  
+  <property description="Filtro" realname="filtersJSON" dialogtype="btDialog" type="url" formguid="{BE0134CF-31FE-488D-9F53-993D7297CA5F}" width="956" height="686"/>  
+  <property description="Propriedades Ocultas" realname="HiddenProperties" type="text" default="SQL" visible="false"/>
+  <property description="Mapa de Parâmetros" realname="HashMapParams" dialogtype="btDropDown" type="boolean" default="false" visible="false"/>
+  <property description="Botão ação principal" realname="actionMainButton" dialogtype="btDialog" type="url" formguid="{BE0134CF-31FE-488D-9F53-993D7297CA5F}" width="956" height="686"/>
+
+
+  <property description="Linhas clicáveis" realname="clickableRows" dialogtype="btDropDown" type="boolean" default="false"/>
+  <property description="Mostrar processamento" realname="processing" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Paginação" realname="serverSide" dialogtype="btDropDown" type="list" default="client">
+    <list>
+    <item name="Cliente" value="client"/>
+    <item name="Servidor" value="server"/>    
+    </list>
+  </property>
+  <property description="Min Itens por página" realname="pageLength" dialogtype="btUpDown" type="integer" default="10"/>
+  <property description="Max Itens por página" realname="pageLengthMax" dialogtype="btUpDown" type="integer" default="50"/>
+  <property description="Linhas zebradas" realname="striped" dialogtype="btDropDown" type="boolean" default="false"/>
+  <property description="Atualização automática (s)" realname="refreshInterval" dialogtype="btUpDown" type="integer" default="0"/>
+  <property description="Alinhamento vertical" realname="verticalAlignment" dialogtype="btDropDown" type="list" default="middle">
+    <list>
+    <item name="Topo" value="top"/>
+    <item name="Meio" value="middle"/>
+    <item name="Base" value="bottom"/>
+    </list>
+  </property>
+  <property description="Mostrar cabeçalho" realname="showHeader" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Altura do cabeçalho" realname="headerHeight" dialogtype="btUpDown" type="integer" default="40"/>
+  <property description="Altura das linhas" realname="rowHeight" dialogtype="btUpDown" type="integer" default="40"/>
+  <property description="Mostrar itens por pag" realname="showLength" dialogtype="btDropDown" type="boolean" default="false"/>
+  <property description="Mostrar buscador" realname="showSearch" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Mostrar filtros" realname="showFilter" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Mostrar informações" realname="showInfo" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Mostrar paginação" realname="showPagination" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Posição do Filtro" realname="filterPosition" dialogtype="btDropDown" type="list" default="inside">
+    <list>
+    <item name="Dentro" value="inside"/>
+    <item name="Topo" value="top"/>
+    </list>
+  </property>
+  <property description="Permitir ordenação" realname="showOrdering" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Desativar rolagem" realname="disableScrollY" dialogtype="btDropDown" type="boolean" default="true"/>
+  <!-- CORES / ESTILO -->
+  <property description="Cor fundo cabeçalho" realname="headerBackground" dialogtype="btEdit" type="letras" default="#f8f9fa"/>
+  <property description="Cor texto cabeçalho" realname="headerColor" dialogtype="btEdit" type="letras" default="#212529"/>
+  <property description="Cor texto linhas" realname="rowColor" dialogtype="btEdit" type="letras" default="#212529"/>
+  <property description="Cor bordas" realname="borderColor" dialogtype="btEdit" type="letras" default="#dee2e6"/>
+  <property description="Cor fundo linhas" realname="rowBackground" dialogtype="btEdit" type="letras" default="#ffffff"/>
+  <property description="Cor fundo zebrado" realname="rowStripedBackground" dialogtype="btEdit" type="letras" default="#f2f2f2"/>
+
+  <!-- BORDAS -->
+  <property description="Bordas horizontais" realname="showHorizontalBorders" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Bordas verticais" realname="showVerticalBorders" dialogtype="btDropDown" type="boolean" default="true"/>
+  <property description="Borda externa" realname="showOuterBorder" dialogtype="btDropDown" type="boolean" default="true"/>
+
+  <!-- OUTROS -->
+  <property description="Arred. cantos (px)" realname="radius" dialogtype="btUpDown" type="integer" default="0"/>
+  <property description="Filtro compacto" realname="filterCompact" dialogtype="btDropDown" type="boolean" default="false"/>
+
+  <property description="Tema da paginação" realname="paginationTheme" dialogtype="btDropDown" type="list" default="">
+    <list>
+    <item name="Padrão" value=""/>
+    <item name="Primary" value="primary"/>
+    <item name="Secondary" value="secondary"/>
+    <item name="Success" value="success"/>
+    <item name="Danger" value="danger"/>
+    <item name="Warning" value="warning"/>
+    <item name="Info" value="info"/>
+    <item name="Light" value="light"/>
+    <item name="Dark" value="dark"/>
+    </list>
+  </property>
+  <property description="Tradução" realname="locale" dialogtype="btEdit" type="letras" default="pt_BR"/>
+  <property description="Custom Css" realname="theme" dialogtype="btEdit" type="letras" default=""/>
+
+  
+  <event description="Ao clicar na linha" realname="onRowClick"/>
+  <event description="Ao clicar em botão da linha" realname="onButtonClick"/>
+  <event description="Após carga de dados" realname="onAfterLoadDT"/>
+  <event description="Ao clicar no checkbox" realname="onCheckboxClick"/>
+  
+  <function name="DataTables - Adicionar Nova Linha" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Adiciona dinamicamente uma nova linha na tabela informada.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Dados da Linha. (JSON) 
+     - Objeto JSON contendo as chaves iguais aos nomes das colunas.
+     - Ex.: {"S.L":999,"Invoice":"#123","Name":"Fulano",...}
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="JSON Linha" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Atualizar" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Força a atualização/redesenho da tabela (recarrega a visualização).
+    Útil após alterações de dados/consulta ou mudanças de layout.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Buscar" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Aplica uma busca global (search) no conteúdo da tabela.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Texto da Busca. (Letras)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Buscar" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Carregar dataJSON" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Carrega uma lista de dados (array JSON) na tabela, substituindo o conteúdo atual.
+    Indicado para modo client-side com dados em memória.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. dataJSON. (JSON)
+     - Array de objetos JSON.
+     - Ex.: [{"S.L":101,"Invoice":"#1"}, {"S.L":102,"Invoice":"#2"}]
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="dataJSON" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Desmarcar Todos" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Desmarca (desseleciona) todos os checkboxes da coluna de seleção da tabela.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Destruir" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Destrói a instância do DataTables do componente informado, removendo eventos,
+    paginação e estrutura criada pelo plugin (retorna a tabela ao estado "cru").
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Exibir por pagina" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Define quantos registros serão exibidos por página (pageLength).
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Quantidade por Página. (Inteiro)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Itens" type="Inteiro" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Filtrar" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Aplica filtro por coluna, com suporte a faixa numérica (mínimo e máximo).
+    Exemplo típico: filtrar "Amount" entre 100 e 200.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Nome da Coluna. (Letras)
+    3. Valor Inicial. (Numérico)
+    4. Valor Final. (Numérico)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Campo" type="Letras" size="0"/>
+    <input name="Valor A" type="Variante" size="0"/>
+    <input name="Valor B" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Ir Para" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Navega para uma página específica da tabela.
+    Aceita:
+    - Número (0-based ou 1-based conforme implementação),
+    - Palavras reservadas: "first" (primeira) e "last" (última).
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Página. (Letras)
+     - Pode ser "first", "last" ou um número em formato texto.
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Ir Para" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Limpar" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Limpa o conteúdo de dados da tabela (remove linhas em memória) e redesenha.
+    Pode ser usado para "resetar" a lista antes de carregar novo dataJSON/consulta.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Limpar Filtros" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Remove filtros aplicados (incluindo buscas) e retorna a tabela ao estado padrão de visualização.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Marcar Todos" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Marca (seleciona) todos os checkboxes da coluna de seleção da tabela.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Modificar Consulta" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Altera dinamicamente a consulta SQL associada à tabela e aplica a atualização.
+    Útil para trocar o "dataset" exibido sem reconstruir manualmente o componente.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Consulta SQL. (Letras)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="SQL Query" type="Variante" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Mostrar Coluna" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Exibe ou oculta uma coluna específica da tabela, conforme condição informada.
+    (Mesma finalidade: Mostrar/Ocultar Coluna)
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Nome da Coluna. (Letras)
+    3. Condição. (Lógico)
+     - true: exibir
+     - false: ocultar
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Coluna" type="Letras" size="0"/>
+    <input name="Condição" type="Lógico" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Obter Colunas" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Retorna a lista/definição das colunas atualmente configuradas no componente.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Array/JSON com a definição das colunas.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Obter Dados" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Retorna os dados (linhas) carregados no componente no momento da chamada.
+    Útil para depuração ou integração com regras.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Array/JSON com as linhas da tabela.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+  
+  <function name="DataTables - Obter Pagina Atual" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Retorna a página atual (índice) em que a tabela está posicionada.
+    Observação: pode ser index 0-based dependendo da implementação.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Inteiro representando a página atual (índice).]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Obter Selecionados" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Retorna os valores selecionados na coluna de checkbox da tabela.
+    Normalmente retorna um array com os valores (ex.: IDs, S.L, etc.) das linhas marcadas.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Array/JSON contendo os valores selecionados.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Obter Total Paginas" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Retorna o total de páginas disponíveis considerando a paginação atual
+    (quantidade por página e filtros aplicados).
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Inteiro com o total de páginas.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Ocultar e Exibir" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Oculta ou exibe o componente (tabela) na tela conforme condição lógica.
+    Útil para alternar visibilidade sem destruir a instância.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Condição. (Lógico)
+     - true: exibir
+     - false: ocultar
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Mostrar" type="Lógico" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Recriar" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Recria a tabela (normalmente executa destruir + inicializar novamente),
+    aplicando configurações e re-renderização completa.
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    </params>
+  </function>
+
+  <function name="DataTables - Remover Linha" category="DataTables" layer="1">
+    <description>
+    <![CDATA[Remove uma linha da tabela com base em uma coluna chave e um valor de comparação.
+    Exemplo: remover linha onde Invoice == "#100001".
+
+    Parâmetros:
+    1. Nome do Componente. (Componente)
+    2. Nome da Coluna (chave). (Letras)
+    3. Valor a remover. (Variante)
+
+    Retorno:
+    Não possui.]]>
+    </description>
+    <params>
+    <input name="Componente" type="Componente" size="0"/>
+    <input name="Campo" type="Letras" size="0"/>
+    <input name="Valor" type="Variante" size="0"/>
+    </params>
+  </function>
+
+
+</component>
