@@ -17,3 +17,7 @@ Este repositório contém os arquivos necessários para instalar o componente **
 Mais informações sobre o componente estão disponíveis na Wiki:
 
 - https://github.com/paulocorcino/doc/wiki/WebrunDataTable
+
+## Erros e Dúvidas
+
+Caso encontre algum problema, erro ou tenha dúvidas, por favor **abra uma issue no GitHub** para acompanhamento e suporte.
