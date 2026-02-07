@@ -1,0 +1,197 @@
+/* Filter Toolbar - Minimal base styles, customize in theme CSS files */
+.webrun-filters-toolbar {
+    /*margin-bottom: 1rem;*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.webrun-filters-toolbar>div {
+    flex: 0 1 auto;
+}
+
+div.dataTables_wrapper>div:first-child {
+    margin-bottom: 10px;
+}
+
+/* Fix for DataTables Length Select overlapping arrow (Platform compatibility) */
+div.dataTables_wrapper div.dataTables_length select.form-select {
+    padding-right: 2rem !important;
+    background-position: right 0.5rem center;
+    width: auto;
+    display: inline-block;
+    border-color: var(--bs-border-color, #dee2e6);
+}
+
+/* Spacing between native DT controls and our filters*/
+/* .dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 10px;
+} */
+
+/* Ensure pagination links use platform colors */
+/* Clickable Rows */
+.webrun-clickable-rows tbody tr {
+    cursor: pointer;
+}
+
+.page-link {
+    color: var(--bs-link-color, #0d6efd) !important;
+    border-color: var(--bs-border-color, #dee2e6) !important;
+}
+
+/* Custom Render Helpers */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #dee2e6;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.badge-status {
+    padding: 0.25em 0.6em;
+    font-size: 0.75em;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--bs-primary, #0d6efd) !important;
+    border-color: var(--bs-primary, #0d6efd) !important;
+    color: #ffffff !important;
+}
+
+
+/* Robust Vertical Alignment Fixes */
+table.webrun-dt-align-top tbody td {
+    vertical-align: top !important;
+}
+
+table.webrun-dt-align-middle tbody td {
+    vertical-align: middle !important;
+}
+
+table.webrun-dt-align-bottom tbody td {
+    vertical-align: bottom !important;
+}
+
+/* Transparent Button Style */
+.btn-transparent {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    padding: 0.375rem 0.5rem !important;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none !important;
+    margin-right: .1rem !important;
+    margin-left: .1rem !important;
+}
+
+.btn-transparent:hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+    color: inherit !important;
+}
+
+.btn-transparent:active {
+    transform: scale(0.95);
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Dark mode compatibility fallback */
+[data-bs-theme="dark"] .btn-transparent:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Pagination Style: 'arrows' */
+.webrun-dt-pagination-arrows .dataTables_paginate .pagination {
+    gap: 5px;
+    /* Spacing between items */
+}
+
+/* Base style for all page items (nums & arrows) */
+.webrun-dt-pagination-arrows .page-item .page-link {
+    border: none !important;
+    border-radius: 50% !important;
+    /* Circular */
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--bs-body-color, #212529) !important;
+    font-weight: 500;
+    background: transparent;
+}
+
+/* Active Page (Pink/Red circle) */
+.webrun-dt-pagination-arrows .page-item.active .page-link {
+    background-color: #e56b85 !important;
+    /* Matches uploaded image tone */
+    color: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(229, 107, 133, 0.4);
+}
+
+/* Hover effect */
+.webrun-dt-pagination-arrows .page-item:not(.active) .page-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #000;
+}
+
+/* Disabled state */
+.webrun-dt-pagination-arrows .page-item.disabled .page-link {
+    background: transparent;
+    color: #adb5bd !important;
+    opacity: 0.6;
+}
+
+/* Fix for Sorting Icons encoding issue (ISO-8859-1) */
+table.dataTable thead>tr>th.sorting:before,
+table.dataTable thead>tr>th.sorting_asc:before,
+table.dataTable thead>tr>th.sorting_desc:before,
+table.dataTable thead>tr>th.sorting_asc_disabled:before,
+table.dataTable thead>tr>th.sorting_desc_disabled:before,
+table.dataTable thead>tr>td.sorting:before,
+table.dataTable thead>tr>td.sorting_asc:before,
+table.dataTable thead>tr>td.sorting_desc:before,
+table.dataTable thead>tr>td.sorting_asc_disabled:before,
+table.dataTable thead>tr>td.sorting_desc_disabled:before {
+    content: "\25B2" !important;
+    /* Up Arrow */
+}
+
+table.dataTable thead>tr>th.sorting:after,
+table.dataTable thead>tr>th.sorting_asc:after,
+table.dataTable thead>tr>th.sorting_desc:after,
+table.dataTable thead>tr>th.sorting_asc_disabled:after,
+table.dataTable thead>tr>th.sorting_desc_disabled:after,
+table.dataTable thead>tr>td.sorting:after,
+table.dataTable thead>tr>td.sorting_asc:after,
+table.dataTable thead>tr>td.sorting_desc:after,
+table.dataTable thead>tr>td.sorting_asc_disabled:after,
+table.dataTable thead>tr>td.sorting_desc_disabled:after {
+    content: "\25BC" !important;
+    /* Down Arrow */
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    content: "\25BA" !important;
+}
